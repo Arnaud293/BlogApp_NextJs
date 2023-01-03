@@ -1,6 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
+import { PostCard, Categories, PostWidget } from '../components';
+
+const posts= [
+
+  {title: 'First test', excerpt: 'This is the first test'},
+  {title: 'Second test', excerpt: 'This is the Second test'},
+];
 
 const Home = () => {
   return (
@@ -12,7 +19,7 @@ const Home = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className='lg:col-span-8 col-span-1'>
           {posts.map((post, index) => (
-            <div>{post.title} {post.excerpt}</div>
+            <PostCard key={post.title} post={post} />
           ))}
         </div>
         <div className="lg:col-span-4 col-span-1">
