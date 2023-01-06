@@ -13,7 +13,7 @@ const PostWidget = ({ categories, slug }) => {
     if(slug){
       getSimilarPosts(categories, slug)
       .then((res) => setRelatedPosts(res))
-    }else {
+    } else {
       getRecentPosts()
       .then((res) => setRelatedPosts(res))
     }
@@ -28,7 +28,7 @@ const PostWidget = ({ categories, slug }) => {
       {relatedPosts.map((post, index) => (
         <div key={index} className="flex items-center w-full mb-4">
           <div className="w-16 flex-none">
-            <img src={post.featuredImage.url} alt={post.title} height="60px" width="60px"  className='align-middle rounded-full'/>
+            <img src={post.featuredImage.url} alt={post.title} height="60px" width="60px"  className='align-middle rounded-md'/>
           </div>
           <div className="flex-row ml-4">
             <p className='text-gray-500 font-xs'>{moment(post.createdAt).format("DD MMM YYYY")}</p>
